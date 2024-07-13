@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row mt-5">
+        {{#if users}}
+        <table class="table text-center">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{last_name}}</td>
+                    <td>{{username}}</td>
+                    <td>{{email}}</td>
+                    <td>
+                        <div>
+                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr class="table-dark">
+                    <td colspan="5">USERS REGISTRATION</td>
+                </tr>
+            </tfoot>
+        </table>
+        {{else}}
+        <div class="card text-center mx-auto" style="width: 350px;">
+            <div class="card-header">
+                <h3>You need to create the users</h3>
+            </div>
+
+            <div class="card-body">
+                <p>Click on this button to create an user</p>
+                <a href="/add" class="btn btn-primary">Go to Register</a>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
